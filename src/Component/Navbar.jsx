@@ -8,6 +8,7 @@ const Navbar = () => {
   const isActive = (path) => {
     return location.pathname === path
   }
+  
 
   return (
     <nav className="bg-amber-900 shadow-lg">
