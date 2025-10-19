@@ -76,7 +76,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-amber-900">Email</h3>
-                  <p className="text-amber-700">info@khmerrecipes.com</p>
+                  <p className="text-amber-700">touchchanraksmey169@gmail.com</p>
                 </div>
               </div>
 
@@ -87,7 +87,7 @@ const Contact = () => {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-amber-900">Business Hours</h3>
+                  <h3 className="font-semibold text-amber-900">Open Hours</h3>
                   <p className="text-amber-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
                   <p className="text-amber-700">Saturday: 10:00 AM - 4:00 PM</p>
                 </div>

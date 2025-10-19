@@ -6,6 +6,7 @@ import Navbar from './Component/Navbar'
 import Product from './page/Product'
 import Contact from './page/Contact'
 import FirstPage from './page/FirstPage'
+import ViewRicipe from './page/ViewRicipe'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ const WithNavbar = () => {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/view-recipe" element={<ViewRicipe />} />
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
       </Routes>
