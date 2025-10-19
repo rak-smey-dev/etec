@@ -234,7 +234,7 @@ const Home = () => {
             <a href="#" className="text-amber-200 hover:text-white transition duration-300">Recipes</a>
             <a href="#" className="text-amber-200 hover:text-white transition duration-300">Contact</a>
           </div>
-          <p className="text-amber-300 text-sm">© 2024 Khmer Food Shop. All rights reserved.</p>
+          <p className="text-amber-300 dark:text-gray-400 text-sm">© 2026 Khmer Food Shop. All rights reserved.</p>
         </div>
       </footer>
     </div>
