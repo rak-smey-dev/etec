@@ -1,61 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import { useParams, Link } from 'react-router-dom'
 
 const Product = () => {
   const { id } = useParams()
-  const navigate = useNavigate()
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [quantity, setQuantity] = useState(1)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    console.log('Fetching product with ID:', id)
-    
-    // Try multiple possible API endpoints
-    const endpoints = [
-      `http://localhost:5000/products/${id}`,
-      `http://localhost:5000/api/products/${id}`,
-      `http://localhost:5000/recipes/${id}`,
-      `http://localhost:5000/api/recipes/${id}`
-    ]
-
     const fetchProduct = async () => {
       try {
-        for (const endpoint of endpoints) {
-          try {
-            console.log('Trying endpoint:', endpoint)
-            const res = await axios.get(endpoint)
-            if (res.data) {
-              console.log('Product found:', res.data)
-              setProduct(res.data)
-              setLoading(false)
-              return
-            }
-          } catch (err) {
-            console.log(`Endpoint ${endpoint} failed:`, err.message)
-            continue
-          }
+        setLoading(true)
+        const response = await fetch(`http://localhost:5000/products/${id}`)
+        
+        if (!response.ok) {
+          throw new Error('Product not found')
         }
         
-        // If no endpoint worked, try getting all products and filtering
-        console.log('Trying to fetch all products and filter...')
-        const allProductsRes = await axios.get('http://localhost:5000/products')
-        const foundProduct = allProductsRes.data.find(item => 
-          item.id === parseInt(id) || 
-          item.id === id || 
-          item._id === id
-        )
-        
-        if (foundProduct) {
-          console.log('Product found in all products:', foundProduct)
-          setProduct(foundProduct)
-        } else {
-          console.log('Product not found in all products')
-          setProduct(null)
-        }
-      } catch (error) {
-        console.error('All fetch attempts failed:', error)
+        const data = await response.json()
+        setProduct(data)
+        setError(null)
+      } catch (err) {
+        console.error('Error fetching product:', err)
+        setError('Product not found')
         setProduct(null)
       } finally {
         setLoading(false)
@@ -64,27 +31,6 @@ const Product = () => {
 
     fetchProduct()
   }, [id])
-
-  const handleQuantityChange = (change) => {
-    setQuantity(prev => Math.max(1, prev + change))
-  }
-
-  const handleAddToCart = () => {
-    alert(`Added ${quantity} ${product.title} to cart!`)
-  }
-
-  // For testing - create mock product data
-  const mockProduct = {
-    id: id,
-    title: "Amok Trey",
-    description: "A traditional Cambodian fish curry steamed in banana leaves with coconut milk and Khmer spices.",
-    price: "15.99",
-    category: "Curry",
-    prepTime: "30 mins",
-    cookTime: "45 mins",
-    spicy: true,
-    ingredients: ["Fresh fish", "Coconut milk", "Kroeung paste", "Banana leaves", "Lemon grass", "Turmeric"]
-  }
 
   if (loading) {
     return (
@@ -97,200 +43,187 @@ const Product = () => {
     )
   }
 
-  // Use mock data if no product found from API
-  const displayProduct = product || mockProduct
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Breadcrumb */}
-        <nav className="flex items-center space-x-2 text-sm text-amber-700 mb-8">
-          <Link to="/" className="hover:text-amber-900 transition duration-300">Home</Link>
-          <span>›</span>
-          <Link to="/home" className="hover:text-amber-900 transition duration-300">Recipes</Link>
-          <span>›</span>
-          <span className="text-amber-900 font-semibold">{displayProduct.title}</span>
-        </nav>
-
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-amber-200">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Product Image */}
-            <div className="relative">
-              <div className="aspect-w-4 aspect-h-3 bg-gray-100">
-                {displayProduct.image ? (
-                  <img
-                    src={displayProduct.image}
-                    alt={displayProduct.title}
-                    className="w-full h-96 lg:h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-96 lg:h-full bg-gradient-to-br from-amber-200 to-orange-200 flex items-center justify-center">
-                    <div className="text-center">
-                      <span className="text-6xl mb-4">🍛</span>
-                      <p className="text-amber-700 font-semibold">{displayProduct.title}</p>
-                      <p className="text-amber-600 text-sm mt-2">Traditional Khmer Recipe</p>
-                    </div>
-                  </div>
-                )}
-              </div>
-              
-              {/* Favorite Button */}
-              <button className="absolute top-4 right-4 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition duration-300">
-                <svg className="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Product Details */}
-            <div className="p-8 flex flex-col justify-between">
-              <div>
-                {/* Development Warning */}
-                {!product && (
-                  <div className="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded-lg mb-4">
-                    <p className="text-sm">⚠️ Using mock data - API endpoint not working</p>
-                  </div>
-                )}
-
-                {/* Category Tags */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">
-                    {displayProduct.category || 'Khmer Cuisine'}
-                  </span>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
-                    Traditional
-                  </span>
-                  {displayProduct.spicy && (
-                    <span className="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">
-                      🌶️ Spicy
-                    </span>
-                  )}
-                </div>
-
-                {/* Title */}
-                <h1 className="text-4xl font-bold text-amber-900 mb-4 leading-tight">
-                  {displayProduct.title}
-                </h1>
-
-                {/* Description */}
-                <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                  {displayProduct.description}
-                </p>
-
-                {/* Price */}
-                <div className="flex items-baseline gap-3 mb-6">
-                  <span className="text-3xl font-bold text-amber-700">
-                    ${displayProduct.price || '15.99'}
-                  </span>
-                </div>
-
-                {/* Additional Info */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 bg-amber-50 rounded-xl">
-                    <div className="text-2xl mb-2">⏱️</div>
-                    <div className="font-semibold text-amber-800">Prep Time</div>
-                    <div className="text-sm text-gray-600">{displayProduct.prepTime || '30 mins'}</div>
-                  </div>
-                  <div className="text-center p-4 bg-amber-50 rounded-xl">
-                    <div className="text-2xl mb-2">🔥</div>
-                    <div className="font-semibold text-amber-800">Cook Time</div>
-                    <div className="text-sm text-gray-600">{displayProduct.cookTime || '45 mins'}</div>
-                  </div>
-                </div>
-
-                {/* Ingredients Preview */}
-                <div className="mb-6">
-                  <h3 className="font-semibold text-amber-900 mb-3">Key Ingredients:</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {displayProduct.ingredients ? (
-                      displayProduct.ingredients.slice(0, 5).map((ingredient, index) => (
-                        <span key={index} className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">
-                          {ingredient}
-                        </span>
-                      ))
-                    ) : (
-                      <>
-                        <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Fresh Fish</span>
-                        <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Coconut Milk</span>
-                        <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Khmer Spices</span>
-                        <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Banana Leaves</span>
-                      </>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center border border-amber-300 rounded-lg">
-                    <button 
-                      onClick={() => handleQuantityChange(-1)}
-                      className="px-4 py-2 text-amber-600 hover:bg-amber-50 transition duration-300"
-                    >
-                      -
-                    </button>
-                    <span className="px-4 py-2 text-lg font-semibold">{quantity}</span>
-                    <button 
-                      onClick={() => handleQuantityChange(1)}
-                      className="px-4 py-2 text-amber-600 hover:bg-amber-50 transition duration-300"
-                    >
-                      +
-                    </button>
-                  </div>
-                  
-                  <button 
-                    onClick={handleAddToCart}
-                    className="flex-1 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    Add to Cart
-                  </button>
-                </div>
-
-                <div className="flex gap-3">
-                  <button className="flex-1 border-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
-                    View Recipe
-                  </button>
-                  <button 
-                    onClick={() => navigate('/home')}
-                    className="flex-1 border border-gray-400 hover:bg-gray-100 text-gray-700 font-semibold py-3 px-6 rounded-lg transition duration-300"
-                  >
-                    Back to Recipes
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Related Recipes Section */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold text-amber-900 mb-8 text-center">You Might Also Like</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-amber-100 text-center hover:shadow-xl transition duration-300 cursor-pointer">
-              <div className="text-4xl mb-4">🍜</div>
-              <h3 className="font-semibold text-amber-800 mb-2">Nom Banh Chok</h3>
-              <p className="text-gray-600 text-sm mb-4">Traditional Khmer noodles</p>
-              <span className="text-amber-700 font-bold">$12.99</span>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-amber-100 text-center hover:shadow-xl transition duration-300 cursor-pointer">
-              <div className="text-4xl mb-4">🥘</div>
-              <h3 className="font-semibold text-amber-800 mb-2">Amok Trey</h3>
-              <p className="text-gray-600 text-sm mb-4">Fish coconut curry</p>
-              <span className="text-amber-700 font-bold">$14.99</span>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-amber-100 text-center hover:shadow-xl transition duration-300 cursor-pointer">
-              <div className="text-4xl mb-4">🍖</div>
-              <h3 className="font-semibold text-amber-800 mb-2">Bai Sach Chrouk</h3>
-              <p className="text-gray-600 text-sm mb-4">Pork and rice</p>
-              <span className="text-amber-700 font-bold">$10.99</span>
-            </div>
-          </div>
+  if (error || !product) {
+    return (
+      <div className="min-h-screen bg-amber-50 dark:bg-gray-900 flex items-center justify-center transition-colors duration-300">
+        <div className="text-center">
+          <div className="text-6xl mb-4 animate-bounce">🍜</div>
+          <h1 className="text-2xl font-bold text-amber-900 dark:text-amber-100 mb-2">Recipe Not Found</h1>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">The recipe you're looking for doesn't exist.</p>
+          <Link 
+            to="/recipes" 
+            className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg transition duration-300 hover:shadow-lg transform hover:scale-105"
+          >
+            Back to Recipes
+          </Link>
         </div>
       </div>
+    )
+  }
+
+  // Parse the recipe text more robustly
+  const parseRecipe = (recipeText) => {
+    if (!recipeText) {
+      return { ingredients: [], instructions: [] }
+    }
+    
+    const lines = recipeText.split('\n').map(line => line.trim()).filter(line => line.length > 0)
+    
+    const ingredientsStart = lines.findIndex(line => line.toLowerCase().includes('ingredients'))
+    const instructionsStart = lines.findIndex(line => line.toLowerCase().includes('instructions'))
+    
+    let ingredients = []
+    let instructions = []
+    
+    if (ingredientsStart !== -1 && instructionsStart !== -1) {
+      // Extract ingredients (lines between "Ingredients:" and "Instructions:")
+      ingredients = lines.slice(ingredientsStart + 1, instructionsStart)
+        .filter(line => line.startsWith('- ') || line.match(/^\d+\./) || line.startsWith('• '))
+        .map(line => line.replace(/^[-•]\s*/, '').replace(/^\d+\.\s*/, ''))
+      
+      // Extract instructions (lines after "Instructions:")
+      instructions = lines.slice(instructionsStart + 1)
+        .filter(line => line.match(/^\d+\./))
+        .map(line => line.replace(/^\d+\.\s*/, ''))
+    } else {
+      // Fallback: if no clear sections, treat all lines as ingredients
+      ingredients = lines
+        .filter(line => line.startsWith('- ') || line.startsWith('• '))
+        .map(line => line.replace(/^[-•]\s*/, ''))
+      
+      instructions = lines
+        .filter(line => line.match(/^\d+\./))
+        .map(line => line.replace(/^\d+\.\s*/, ''))
+    }
+    
+    return { ingredients, instructions }
+  }
+
+  const { ingredients, instructions } = parseRecipe(product.recipe)
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 py-12 transition-colors duration-300">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <Link 
+            to="/recipes" 
+            className="inline-flex items-center text-amber-600 dark:text-amber-400 hover:text-amber-700 dark:hover:text-amber-300 transition duration-300 mb-4 group"
+          >
+            <svg className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Recipes
+          </Link>
+          <h1 className="text-4xl md:text-5xl font-bold text-amber-900 dark:text-amber-100 mb-4">{product.title}</h1>
+          <p className="text-xl text-amber-700 dark:text-amber-300 max-w-2xl mx-auto">{product.description}</p>
+        </div>
+
+        {/* Image */}
+        <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden mb-8 transition-colors duration-300">
+          <div className="relative h-96">
+            <img
+              src={product.image}
+              alt={product.title}
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.target.style.display = 'none'
+                // Create fallback element if it doesn't exist
+                if (!e.target.nextSibling) {
+                  const fallback = document.createElement('div')
+                  fallback.className = 'w-full h-full bg-gradient-to-br from-amber-200 to-orange-200 dark:from-gray-600 dark:to-gray-700 flex flex-col items-center justify-center p-4 absolute inset-0'
+                  fallback.innerHTML = `
+                    <span class="text-6xl mb-4">🍛</span>
+                    <span class="text-xl text-amber-700 dark:text-amber-300 font-semibold text-center">${product.title}</span>
+                  `
+                  e.target.parentNode.appendChild(fallback)
+                }
+              }}
+            />
+            
+            {/* Category badge */}
+            <div className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 text-amber-700 dark:text-amber-300 px-3 py-1 rounded-full text-sm font-semibold">
+              {product.category}
+            </div>
+          </div>
+        </div>
+
+        {/* Recipe Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Ingredients */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-amber-100 dark:border-gray-700 transition-colors duration-300">
+            <h2 className="text-2xl font-bold text-amber-900 dark:text-amber-100 mb-6 flex items-center">
+              <span className="text-3xl mr-3">🥕</span>
+              Ingredients
+            </h2>
+            {ingredients.length > 0 ? (
+              <ul className="space-y-3">
+                {ingredients.map((ingredient, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                    <span className="text-gray-700 dark:text-gray-300">{ingredient}</span>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p className="text-gray-500 dark:text-gray-400 italic">No ingredients listed.</p>
+            )}
+          </div>
+
+          {/* Instructions */}
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-amber-100 dark:border-gray-700 transition-colors duration-300">
+            <h2 className="text-2xl font-bold text-amber-900 dark:text-amber-100 mb-6 flex items-center">
+              <span className="text-3xl mr-3">👨‍🍳</span>
+              Instructions
+            </h2>
+            {instructions.length > 0 ? (
+              <ol className="space-y-4">
+                {instructions.map((instruction, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="flex bg-amber-500 text-white text-sm font-bold w-6 h-6 rounded-full items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                      {index + 1}
+                    </span>
+                    <span className="text-gray-700 dark:text-gray-300 leading-relaxed">{instruction}</span>
+                  </li>
+                ))}
+              </ol>
+            ) : (
+              <div className="text-gray-500 dark:text-gray-400 italic">
+                <p>No instructions listed.</p>
+                <pre className="whitespace-pre-wrap mt-4 font-sans text-sm bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                  {product.recipe}
+                </pre>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Full Recipe Text (Fallback) */}
+        {(ingredients.length === 0 || instructions.length === 0) && product.recipe && (
+          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-amber-100 dark:border-gray-700 mt-8">
+            <h2 className="text-2xl font-bold text-amber-900 dark:text-amber-100 mb-4">Full Recipe</h2>
+            <pre className="whitespace-pre-wrap font-sans text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+              {product.recipe}
+            </pre>
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-amber-900 dark:bg-gray-700 text-amber-100 py-12 mt-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h3 className="text-2xl font-bold mb-4">Sharing Recipes</h3>
+          <p className="text-amber-200 dark:text-gray-300 mb-6 max-w-md mx-auto">
+            Preserving and sharing the rich culinary heritage of Cambodia through authentic recipes and traditional cooking methods.
+          </p>
+          <div className="flex justify-center space-x-6 mb-6">
+            <Link to="/about" className="text-amber-200 dark:text-gray-300 hover:text-white dark:hover:text-amber-400 transition duration-300">About</Link>
+            <Link to="/recipes" className="text-amber-200 dark:text-gray-300 hover:text-white dark:hover:text-amber-400 transition duration-300">Recipes</Link>
+            <Link to="/contact" className="text-amber-200 dark:text-gray-300 hover:text-white dark:hover:text-amber-400 transition duration-300">Contact</Link>
+          </div>
+          <p className="text-amber-300 dark:text-gray-400 text-sm">© 2025 Khmer Food Shop. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }

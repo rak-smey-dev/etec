@@ -1,24 +1,29 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { ThemeProvider } from './ThemeContext'
 import Home from './page/Home'
 import About from './page/About'
 import Navbar from './Component/Navbar'
 import Product from './page/Product'
 import Contact from './page/Contact'
 import FirstPage from './page/FirstPage'
-import ViewRicipe from './page/ViewRicipe'
+import RecipeDashboard from './page/RecipeDashboard' // Import the RecipeDashboard component
+import NewRecipe from './page/NewRecipe'
+import FeedbackPage from './page/FeedbackPage';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        {/* Navbar - visible on all pages except FirstPage if you prefer */}
-        <Routes>
-          <Route path="/" element={<FirstPage />} />
-          <Route path="*" element={<WithNavbar />} />
-        </Routes>
-      </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          {/* Navbar - visible on all pages except FirstPage if you prefer */}
+          <Routes>
+            <Route path="/" element={<FirstPage />} />
+            <Route path="*" element={<WithNavbar />} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   )
 }
 
@@ -26,13 +31,16 @@ function App() {
 const WithNavbar = () => {
   return (
     <>
+    
       <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/products" element={<Product />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/view-recipe" element={<ViewRicipe />} />
+        <Route path="/recipes" element={<RecipeDashboard />} /> {/* Add this route */}
+        <Route path="/new-recipe" element={<NewRecipe />} />
+        <Route path="/feedback" element={<FeedbackPage />} />
         {/* 404 Page */}
         <Route path="*" element={<NotFound />} />
       </Routes>

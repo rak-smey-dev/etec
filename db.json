@@ -1,84 +1,212 @@
 {
   "products": [
     {
-        "id": 1,
-        "title": "Beef Lok Lak",
-        "image": "https://www.visit-angkor.org/wp-content/uploads/2024/03/beef-lok-lak-cambodia.jpg",
-        "description": "A traditional Cambodian dish made with marinated beef.",
-        "price": 8.99,
-        "category": "Main Course",
-        "recipe": "Ingredients:\n- 500g beef sirloin, thinly sliced\n- 2 tablespoons soy sauce\n- 1 tablespoon oyster sauce\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 teaspoon black pepper\n- 2 cloves garlic, minced\n- 1 onion, sliced\n- 1 tomato, sliced\n- Lettuce leaves for serving\n- Steamed rice for serving\n\nInstructions:\n1. In a bowl, combine soy sauce, oyster sauce, fish sauce, sugar, and black pepper. Add the beef slices and marinate for at least 30 minutes.\n2. Heat a pan over medium-high heat and add a bit of oil. Sauté the minced garlic until fragrant.\n3. Add the marinated beef to the pan and stir-fry until cooked through.\n4. Add the sliced onion and tomato to the pan and cook for another 2 minutes.\n5. Serve the beef lok lak on a bed of lettuce leaves with steamed rice on the side."
+      "id": "1",
+      "title": "Beef Lok Lak",
+      "image": "https://www.visit-angkor.org/wp-content/uploads/2024/03/beef-lok-lak-cambodia.jpg",
+      "description": "A traditional Cambodian dish made with marinated beef.",
+      "price": 8.99,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 500g beef sirloin, thinly sliced\n- 2 tablespoons soy sauce\n- 1 tablespoon oyster sauce\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 teaspoon black pepper\n- 2 cloves garlic, minced\n- 1 onion, sliced\n- 1 tomato, sliced\n- Lettuce leaves for serving\n- Steamed rice for serving\n\nInstructions:\n1. In a bowl, combine soy sauce, oyster sauce, fish sauce, sugar, and black pepper. Add the beef slices and marinate for at least 30 minutes.\n2. Heat a pan over medium-high heat and add a bit of oil. Sauté the minced garlic until fragrant.\n3. Add the marinated beef to the pan and stir-fry until cooked through.\n4. Add the sliced onion and tomato to the pan and cook for another 2 minutes.\n5. Serve the beef lok lak on a bed of lettuce leaves with steamed rice on the side."
     },
     {
-        "id": 2,
-        "title": "Fish Amok",
-        "image": "https://i.pinimg.com/1200x/8c/ce/c1/8ccec1741358d39ab740ef10bc8c10ab.jpg",
-        "description": "A traditional Cambodian dish made with fish and coconut milk.",
-        "price": 9.99,
-        "category": "Main Course",
-        "recipe": "Ingredients:\n- 500g white fish fillets (e.g., tilapia or catfish)\n- 1 cup coconut milk\n- 2 tablespoons red curry paste\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 egg\n- 1 cup spinach leaves\n- Banana leaves for steaming (optional)\n\nInstructions:\n1. Cut the fish fillets into bite-sized pieces.\n2. In a bowl, mix the coconut milk, red curry paste, fish sauce, sugar, and egg until well combined.\n3. Add the fish pieces to the mixture and let it marinate for at least 15 minutes.\n4. If using banana leaves, cut them into squares and soften them by steaming or soaking in hot water.\n5. Place a few spinach leaves on each banana leaf square, then add the fish mixture on top.\n6. Fold the banana leaves to create a packet and secure with toothpicks if necessary.\n7. Steam the packets for about 20 minutes or until the fish is cooked through.\n8. Serve hot with steamed rice."
+      "id": "2",
+      "title": "Fish Amok",
+      "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSB-fAmvFc9mosZptiv5pNfzdbgOcyzkHIFiP2EuSmhgoviiWrQzQocySLRZizCfH6z8F-pZhkgPVNfdxMJMjD8XbMfZdi2HtOypk0oGA",
+      "description": "A traditional Cambodian dish made with fish and coconut milk.",
+      "price": 9.99,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 500g white fish fillets (e.g., tilapia or catfish)\n- 1 cup coconut milk\n- 2 tablespoons red curry paste\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 egg\n- 1 cup spinach leaves\n- Banana leaves for steaming (optional)\n\nInstructions:\n1. Cut the fish fillets into bite-sized pieces.\n2. In a bowl, mix the coconut milk, red curry paste, fish sauce, sugar, and egg until well combined.\n3. Add the fish pieces to the mixture and let it marinate for at least 15 minutes.\n4. If using banana leaves, cut them into squares and soften them by steaming or soaking in hot water.\n5. Place a few spinach leaves on each banana leaf square, then add the fish mixture on top.\n6. Fold the banana leaves to create a packet and secure with toothpicks if necessary.\n7. Steam the packets for about 20 minutes or until the fish is cooked through.\n8. Serve hot with steamed rice."
     },
     {
-        "id": 3,
-        "title": "Nom Banh Chok",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwnMt-6xkjh_R8Vo3PkjVDmDden9F787X_Hg&s",
-        "description": "A traditional Cambodian dish made with rice noodles and fish gravy.",
-        "price": 6.99,
-        "category": "Breakfast",
-        "recipe": "Ingredients:\n- 200g rice noodles\n- 300g fish fillets (e.g., catfish or tilapia)\n- 1 tablespoon fish sauce\n- 1 teaspoon turmeric powder\n- 1 teaspoon sugar\n- 1 cup water\n- Fresh herbs (mint, basil, cilantro)\n- Bean sprouts\n- Cucumber, sliced\n- Lime wedges\n\nInstructions:\n1. Cook the rice noodles according to the package instructions. Drain and set aside.\n2. In a pot, bring water to a boil and add the fish fillets. Cook until the fish is done, then remove and flake it into small pieces.\n3. In the same pot, add fish sauce, turmeric powder, and sugar. Stir well to create the fish gravy.\n4. Add the flaked fish back into the pot and simmer for a few minutes.\n5. To serve, place a portion of rice noodles in a bowl, pour the fish gravy over it, and top with fresh herbs, bean sprouts, cucumber slices, and a squeeze of lime juice."
+      "id": "3",
+      "title": "Nom Banh Chok",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwnMt-6xkjh_R8Vo3PkjVDmDden9F787X_Hg&s",
+      "description": "A traditional Cambodian dish made with rice noodles and fish gravy.",
+      "price": 6.99,
+      "category": "Breakfast",
+      "recipe": "Ingredients:\n- 200g rice noodles\n- 300g fish fillets (e.g., catfish or tilapia)\n- 1 tablespoon fish sauce\n- 1 teaspoon turmeric powder\n- 1 teaspoon sugar\n- 1 cup water\n- Fresh herbs (mint, basil, cilantro)\n- Bean sprouts\n- Cucumber, sliced\n- Lime wedges\n\nInstructions:\n1. Cook the rice noodles according to the package instructions. Drain and set aside.\n2. In a pot, bring water to a boil and add the fish fillets. Cook until the fish is done, then remove and flake it into small pieces.\n3. In the same pot, add fish sauce, turmeric powder, and sugar. Stir well to create the fish gravy.\n4. Add the flaked fish back into the pot and simmer for a few minutes.\n5. To serve, place a portion of rice noodles in a bowl, pour the fish gravy over it, and top with fresh herbs, bean sprouts, cucumber slices, and a squeeze of lime juice."
     },
     {
-        "id": 4,
-        "title": "Khmer Red Curry",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjA9plmXG-wYO8PzDTG5sX5Sjo-bR1ISZdEcKDE-cYWGAQpK_X3L2Fb8p1VcdtpZtyt8&usqp=CAU",
-        "description": "A traditional Cambodian dish made with meat and vegetables in a rich red curry sauce.",
-        "price": 10.99,
-        "category": "Main Course",
-        "recipe": "Ingredients:\n- 500g chicken or beef, cut into bite-sized pieces\n- 2 tablespoons red curry paste\n- 1 can (400ml) coconut milk\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 cup eggplant, cubed\n- 1 cup bamboo shoots, sliced\n- 1 red bell pepper, sliced\n- Fresh basil leaves for garnish\n- Steamed rice for serving\n\nInstructions:\n1. In a large pan, heat a bit of oil over medium heat. Add the red curry paste and sauté until fragrant.\n2. Add the chicken or beef pieces to the pan and cook until browned.\n3. Pour in the coconut milk, fish sauce, and sugar. Stir well to combine.\n4. Add the eggplant, bamboo shoots, and red bell pepper to the pan. Simmer for about 15-20 minutes until the meat is cooked through and the vegetables are tender.\n5. Garnish with fresh basil leaves and serve hot with steamed rice."
+      "id": "4",
+      "title": "Khmer Red Curry",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjA9plmXG-wYO8PzDTG5sX5Sjo-bR1ISZdEcKDE-cYWGAQpK_X3L2Fb8p1VcdtpZtyt8&usqp=CAU",
+      "description": "A traditional Cambodian dish made with meat and vegetables in a rich red curry sauce.",
+      "price": 10.99,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 500g chicken or beef, cut into bite-sized pieces\n- 2 tablespoons red curry paste\n- 1 can (400ml) coconut milk\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 1 cup eggplant, cubed\n- 1 cup bamboo shoots, sliced\n- 1 red bell pepper, sliced\n- Fresh basil leaves for garnish\n- Steamed rice for serving\n\nInstructions:\n1. In a large pan, heat a bit of oil over medium heat. Add the red curry paste and sauté until fragrant.\n2. Add the chicken or beef pieces to the pan and cook until browned.\n3. Pour in the coconut milk, fish sauce, and sugar. Stir well to combine.\n4. Add the eggplant, bamboo shoots, and red bell pepper to the pan. Simmer for about 15-20 minutes until the meat is cooked through and the vegetables are tender.\n5. Garnish with fresh basil leaves and serve hot with steamed rice."
     },
     {
-        "id": 5,
-        "title": "Prahok Ktis",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VZ4zycpXYmT3_DURKfaaKdysoYWaMaK8Lw&s",
-        "price": 7.99,
-        "category": "Appetizer",
-        "recipe": "Ingredients:\n- 200g prahok (fermented fish paste)\n- 1 cup coconut milk\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 cloves garlic, minced\n- 1 red chili, sliced (optional)\n- Fresh herbs (mint, basil, cilantro)\n- Fresh vegetables for serving (cucumber, cabbage, carrots)\n\nInstructions:\n1. In a bowl, mix the prahok with coconut milk, fish sauce, sugar, and minced garlic until well combined.\n2. If you like it spicy, add the sliced red chili to the mixture.\n3. Serve the prahok ktis in a small bowl, garnished with fresh herbs.\n4. Enjoy it as a dip with fresh vegetables like cucumber, cabbage, and carrots."
+      "id": "5",
+      "title": "Prahok Ktis",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VZ4zycpXYmT3_DURKfaaKdysoYWaMaK8Lw&s",
+      "price": 7.99,
+      "category": "Appetizer",
+      "recipe": "Ingredients:\n- 200g prahok (fermented fish paste)\n- 1 cup coconut milk\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 cloves garlic, minced\n- 1 red chili, sliced (optional)\n- Fresh herbs (mint, basil, cilantro)\n- Fresh vegetables for serving (cucumber, cabbage, carrots)\n\nInstructions:\n1. In a bowl, mix the prahok with coconut milk, fish sauce, sugar, and minced garlic until well combined.\n2. If you like it spicy, add the sliced red chili to the mixture.\n3. Serve the prahok ktis in a small bowl, garnished with fresh herbs.\n4. Enjoy it as a dip with fresh vegetables like cucumber, cabbage, and carrots."
     },
     {
-        "id": 6,
-        "title": "Sticky Rice with Mango",
-        "image": "https://rakskitchen.net/wp-content/uploads/2024/06/mango-sticky-rice-thai.jpg",
-        "description": "A traditional Cambodian dessert made with sticky rice and fresh mango.",
-        "price": 5.99,
-        "category": "Dessert",
-        "recipe": "Ingredients:\n- 1 cup glutinous (sticky) rice\n- 1 can (400ml) coconut milk\n- 1/2 cup sugar\n- 1/4 teaspoon salt\n- 2 ripe mangoes, peeled and sliced\n- Sesame seeds for garnish (optional)\n\nInstructions:\n1. Rinse the sticky rice under cold water until the water runs clear. Soak the rice in water for at least 4 hours or overnight.\n2. Drain the soaked rice and steam it in a steamer basket over boiling water for about 20-25 minutes until tender.\n3. In a saucepan, heat the coconut milk, sugar, and salt over medium heat until the sugar is dissolved. Do not boil.\n4. Once the rice is cooked, transfer it to a bowl and pour about two-thirds of the coconut milk mixture over it. Stir well to combine and let it sit for about 15 minutes to absorb the coconut milk.\n5. To serve, place a portion of sticky rice on a plate, arrange mango slices on top or beside it, and drizzle with the remaining coconut milk mixture. Garnish with sesame seeds if desired."
+      "id": "6",
+      "title": "Sticky Rice with Mango",
+      "image": "https://rakskitchen.net/wp-content/uploads/2024/06/mango-sticky-rice-thai.jpg",
+      "description": "A traditional Cambodian dessert made with sticky rice and fresh mango.",
+      "price": 5.99,
+      "category": "Dessert",
+      "recipe": "Ingredients:\n- 1 cup glutinous (sticky) rice\n- 1 can (400ml) coconut milk\n- 1/2 cup sugar\n- 1/4 teaspoon salt\n- 2 ripe mangoes, peeled and sliced\n- Sesame seeds for garnish (optional)\n\nInstructions:\n1. Rinse the sticky rice under cold water until the water runs clear. Soak the rice in water for at least 4 hours or overnight.\n2. Drain the soaked rice and steam it in a steamer basket over boiling water for about 20-25 minutes until tender.\n3. In a saucepan, heat the coconut milk, sugar, and salt over medium heat until the sugar is dissolved. Do not boil.\n4. Once the rice is cooked, transfer it to a bowl and pour about two-thirds of the coconut milk mixture over it. Stir well to combine and let it sit for about 15 minutes to absorb the coconut milk.\n5. To serve, place a portion of sticky rice on a plate, arrange mango slices on top or beside it, and drizzle with the remaining coconut milk mixture. Garnish with sesame seeds if desired."
     },
     {
-        "id": 7,
-        "title": "Samlor Korkor",
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzExmoTJVT5xeYxtmr7l9fV_Lh66uXPYL0Fg&s",
-        "description": "A traditional Cambodian soup made with vegetables and meat.",
-        "price": 8.49,
-        "category": "Soup",
-        "recipe": "Ingredients:\n- 300g pork or chicken, cut into bite-sized pieces\n- 1 cup eggplant, cubed\n- 1 cup green beans, cut into 2-inch pieces\n- 1 cup pumpkin, cubed\n- 1 cup taro root, cubed\n- 1 onion, chopped\n- 2 cloves garlic, minced\n- 1 tablespoon fish sauce\n- 1 teaspoon salt\n- 1/2 teaspoon black pepper\n- 6 cups water or chicken broth\n- Fresh herbs (cilantro, basil) for garnish\n\nInstructions:\n1. In a large pot, heat a bit of oil over medium heat. Add the chopped onion and minced garlic, and sauté until fragrant.\n2. Add the pork or chicken pieces to the pot and cook until browned.\n3. Pour in the water or chicken broth and bring to a boil.\n4. Add the eggplant, green beans, pumpkin, and taro root to the pot. Reduce the heat and let it simmer for about 20-30 minutes until the vegetables are tender.\n5. Season the soup with fish sauce, salt, and black pepper. Adjust the seasoning to taste.\n6. Serve hot, garnished with fresh herbs."
+      "id": "7",
+      "title": "Samlor Korkor",
+      "image": "https://toursbyjeeps.com/wp-content/uploads/2020/12/Untitled-1.jpg",
+      "description": "A traditional Cambodian soup made with vegetables and meat.",
+      "price": 8.49,
+      "category": "Soup",
+      "recipe": "Ingredients:\n- 300g pork or chicken, cut into bite-sized pieces\n- 1 cup eggplant, cubed\n- 1 cup green beans, cut into 2-inch pieces\n- 1 cup pumpkin, cubed\n- 1 cup taro root, cubed\n- 1 onion, chopped\n- 2 cloves garlic, minced\n- 1 tablespoon fish sauce\n- 1 teaspoon salt\n- 1/2 teaspoon black pepper\n- 6 cups water or chicken broth\n- Fresh herbs (cilantro, basil) for garnish\n\nInstructions:\n1. In a large pot, heat a bit of oil over medium heat. Add the chopped onion and minced garlic, and sauté until fragrant.\n2. Add the pork or chicken pieces to the pot and cook until browned.\n3. Pour in the water or chicken broth and bring to a boil.\n4. Add the eggplant, green beans, pumpkin, and taro root to the pot. Reduce the heat and let it simmer for about 20-30 minutes until the vegetables are tender.\n5. Season the soup with fish sauce, salt, and black pepper. Adjust the seasoning to taste.\n6. Serve hot, garnished with fresh herbs."
     },
     {
-        "id": 8,
-        "title": "Khmer Noodles Soup (Kuy Teav)",
-        "image": "https://www.foodnetwork.com/content/dam/images/food/fullset/2022/01/19/FN_kuy-teav-deana-saukam_s4x3.jpg",
-        "description": "A traditional Cambodian noodle soup made with beef or pork broth.",
-        "price": 7.49,
-        "category": "Breakfast",
-        "recipe": "Ingredients:\n- 200g rice noodles\n- 300g beef or pork, thinly sliced\n- 6 cups beef or pork broth\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 cloves garlic, minced\n- 1 onion, sliced\n- Fresh herbs (cilantro, basil, green onions)\n- Bean sprouts\n- Lime wedges\n- Chili sauce (optional)\n\nInstructions:\n1. Cook the rice noodles according to the package instructions. Drain and set aside.\n2. In a pot, bring the beef or pork broth to a boil. Add the minced garlic and sliced onion, and let it simmer for about 10 minutes.\n3. Add the thinly sliced beef or pork to the pot and cook until just done.\n4. Season the broth with fish sauce and sugar. Adjust the seasoning to taste.\n5. To serve, place a portion of rice noodles in a bowl, ladle the hot broth with meat over it, and top with fresh herbs and bean sprouts.\n6. Serve with lime wedges and chili sauce on the side for added flavor."
+      "id": "8",
+      "title": "Khmer Noodles Soup (Kuy Teav)",
+      "image": "https://www.foodnetwork.com/content/dam/images/food/fullset/2022/01/19/FN_kuy-teav-deana-saukam_s4x3.jpg",
+      "description": "A traditional Cambodian noodle soup made with beef or pork broth.",
+      "price": 7.49,
+      "category": "Breakfast",
+      "recipe": "Ingredients:\n- 200g rice noodles\n- 300g beef or pork, thinly sliced\n- 6 cups beef or pork broth\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 cloves garlic, minced\n- 1 onion, sliced\n- Fresh herbs (cilantro, basil, green onions)\n- Bean sprouts\n- Lime wedges\n- Chili sauce (optional)\n\nInstructions:\n1. Cook the rice noodles according to the package instructions. Drain and set aside.\n2. In a pot, bring the beef or pork broth to a boil. Add the minced garlic and sliced onion, and let it simmer for about 10 minutes.\n3. Add the thinly sliced beef or pork to the pot and cook until just done.\n4. Season the broth with fish sauce and sugar. Adjust the seasoning to taste.\n5. To serve, place a portion of rice noodles in a bowl, ladle the hot broth with meat over it, and top with fresh herbs and bean sprouts.\n6. Serve with lime wedges and chili sauce on the side for added flavor."
     },
     {
-        "id": 9,
-        "title": "Crispy Fried Spring Rolls",
-        "image": "https://thai-foodie.com/wp-content/uploads/2023/07/thai-egg-rolls-redo.jpg",
-        "description": "A traditional Cambodian appetizer made with vegetables and meat wrapped in rice paper and fried until crispy.",
-        "price": 6.49,
-        "category": "Appetizer",
-        "recipe": "Ingredients:\n- 200g ground pork or chicken\n- 1 cup shredded cabbage\n- 1 cup shredded carrots\n- 1/2 cup bean sprouts\n- 2 cloves garlic, minced\n- 1 tablespoon soy sauce\n- 1 teaspoon fish sauce\n- 1 teaspoon sugar\n- Rice paper wrappers\n- Oil for frying\n- Dipping sauce (sweet chili sauce or peanut sauce)\n\nInstructions:\n1. In a bowl, combine the ground pork or chicken, shredded cabbage, shredded carrots, bean sprouts, minced garlic, soy sauce, fish sauce, and sugar. Mix well.\n2. Soften the rice paper wrappers by dipping them in warm water for a few seconds until pliable.\n3. Place a small amount of the filling mixture onto the center of each rice paper wrapper. Fold in the sides and roll tightly to form a spring roll.\n4. Heat oil in a deep pan or fryer over medium-high heat. Fry the spring rolls in batches until golden brown and crispy, about 3-4 minutes per side.\n5. Remove the spring rolls from the oil and drain on paper towels.\n6. Serve hot with your choice of dipping sauce."
+      "id": "9",
+      "title": "Crispy Fried Spring Rolls",
+      "image": "https://thai-foodie.com/wp-content/uploads/2023/07/thai-egg-rolls-redo.jpg",
+      "description": "A traditional Cambodian appetizer made with vegetables and meat wrapped in rice paper and fried until crispy.",
+      "price": 6.49,
+      "category": "Appetizer",
+      "recipe": "Ingredients:\n- 200g ground pork or chicken\n- 1 cup shredded cabbage\n- 1 cup shredded carrots\n- 1/2 cup bean sprouts\n- 2 cloves garlic, minced\n- 1 tablespoon soy sauce\n- 1 teaspoon fish sauce\n- 1 teaspoon sugar\n- Rice paper wrappers\n- Oil for frying\n- Dipping sauce (sweet chili sauce or peanut sauce)\n\nInstructions:\n1. In a bowl, combine the ground pork or chicken, shredded cabbage, shredded carrots, bean sprouts, minced garlic, soy sauce, fish sauce, and sugar. Mix well.\n2. Soften the rice paper wrappers by dipping them in warm water for a few seconds until pliable.\n3. Place a small amount of the filling mixture onto the center of each rice paper wrapper. Fold in the sides and roll tightly to form a spring roll.\n4. Heat oil in a deep pan or fryer over medium-high heat. Fry the spring rolls in batches until golden brown and crispy, about 3-4 minutes per side.\n5. Remove the spring rolls from the oil and drain on paper towels.\n6. Serve hot with your choice of dipping sauce."
+    },
+    {
+      "id": "10",
+      "title": "Cambodian Iced Coffee",
+      "image": "https://i.pinimg.com/736x/ea/3f/78/ea3f781f81bc8f1f3e411c19ca800c28.jpg",
+      "description": "A refreshing Cambodian beverage made with strong coffee, sweetened condensed milk, and ice.",
+      "price": 3.99,
+      "category": "Beverage",
+      "recipe": "Ingredients:\n- 1 cup strong brewed coffee (preferably Cambodian coffee)\n- 2 tablespoons sweetened condensed milk\n- Ice cubes\n\nInstructions:\n1. Brew a cup of strong coffee using your preferred method.\n2. In a glass, add the sweetened condensed milk.\n3. Pour the hot coffee over the condensed milk and stir well to combine.\n4. Fill the glass with ice cubes.\n5. Stir again and enjoy your refreshing Cambodian iced coffee."
+    },
+    {
+      "id": "11",
+      "title": "Cambodian Mango Salad",
+      "image": "https://grantourismotravels.com/wp-content/uploads/2021/10/Burmese-Green-Mango-Salad-Recipe-Copyright-2022-Terence-Carter-Grantourismo-T-480x270.jpg",
+      "description": "A light and refreshing Cambodian salad made with green mangoes, herbs, and a tangy dressing.",
+      "price": 5.49,
+      "category": "Salad",
+      "recipe": "Ingredients:\n- 2 green mangoes, peeled and julienned\n- 1/2 cup shredded carrots\n- 1/4 cup chopped fresh cilantro\n- 1/4 cup chopped fresh mint\n- 1/4 cup chopped roasted peanuts\n- 2 tablespoons fish sauce\n- 1 tablespoon lime juice\n- 1 teaspoon sugar\n- 1 red chili, sliced (optional)\n\nInstructions:\n1. In a large bowl, combine the julienned green mangoes, shredded carrots, chopped cilantro, and chopped mint.\n2. In a small bowl, whisk together the fish sauce, lime juice, and sugar until the sugar is dissolved.\n3. Pour the dressing over the salad and toss well to combine.\n4. If you like it spicy, add the sliced red chili to the salad.\n5. Garnish with chopped roasted peanuts before serving."
+    },
+    {
+      "id": "12",
+      "title": "Cambodian Beef Skewers (Sach Ko Ang)",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgVOZWJ52MfHuu3MneqOHTeuWxXOndPtRjDCv7dGAXvITNPbtBbogU3mglmP9sjN1SCeM&usqp=CAU",
+      "description": "Grilled Cambodian beef skewers marinated in a flavorful blend of spices and herbs.",
+      "price": 9.49,
+      "category": "Appetizer",
+      "recipe": "Ingredients:\n- 500g beef sirloin, thinly sliced\n- 2 tablespoons soy sauce\n- 1 tablespoon fish sauce\n- 1 tablespoon sugar\n- 2 cloves garlic, minced\n- 1 teaspoon ground black pepper\n- 1 teaspoon ground coriander\n- Bamboo skewers, soaked in water for 30 minutes\n\nInstructions:\n1. In a bowl, combine soy sauce, fish sauce, sugar, minced garlic, ground black pepper, and ground coriander. Add the beef slices and marinate for at least 1 hour.\n2. Preheat a grill or grill pan over medium-high heat.\n3. Thread the marinated beef slices onto the soaked bamboo skewers.\n4. Grill the beef skewers for about 2-3 minutes per side or until cooked to your desired level of doneness.\n5. Remove from the grill and let rest for a few minutes before serving.\n6. Serve the beef skewers with a side of rice or dipping sauce."
+    },
+    {
+      "id": "13",
+      "title": "Cambodian Pumpkin Custard (Sankhya Lapov)",
+      "image": "https://www.indochinatour.com/assets/images/Cambodia-/cambodia-sankhya-lapov.jpg",
+      "description": "A traditional Cambodian dessert made with pumpkin and coconut custard.",
+      "price": 6.99,
+      "category": "Dessert",
+      "recipe": "Ingredients:\n- 1 small pumpkin (about 1kg)\n- 1 can (400ml) coconut milk\n- 4 eggs\n- 1/2 cup sugar\n- 1/4 teaspoon salt\n- 1 teaspoon vanilla extract\n\nInstructions:\n1. Preheat the oven to 350°F (175°C).\n2. Cut the top off the pumpkin and scoop out the seeds and stringy pulp. Set aside.\n3. In a bowl, whisk together the coconut milk, eggs, sugar, salt, and vanilla extract until well combined.\n4. Pour the custard mixture into the hollowed-out pumpkin.\n5. Place the pumpkin in a baking dish and add hot water to the dish until it reaches halfway up the sides of the pumpkin.\n6. Bake for about 1 hour or until the custard is set and a toothpick inserted into the center comes out clean.\n7. Remove from the oven and let cool before slicing and serving."
+    },
+    {
+      "id": "14",
+      "title": "Cambodian Fried Rice (Bai Cha)",
+      "image": "https://www.jozmahal.com/wp-content/uploads/2023/11/pork-fried-rice-featured.jpg",
+      "description": "A flavorful Cambodian fried rice dish made with vegetables, eggs, and your choice of protein.",
+      "price": 7.99,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 2 cups cooked jasmine rice (preferably day-old)\n- 200g chicken, shrimp, or tofu, diced\n- 2 cloves garlic, minced\n- 1 small onion, chopped\n- 1 cup mixed vegetables (carrots, peas, corn)\n- 2 eggs, beaten\n- 2 tablespoons soy sauce\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 green onions, sliced\n- Fresh cilantro for garnish\n\nInstructions:\n1. Heat a bit of oil in a large pan or wok over medium-high heat. Add the minced garlic and chopped onion, and sauté until fragrant.\n2. Add the diced chicken, shrimp, or tofu to the pan and cook until fully cooked.\n3. Push the protein to one side of the pan and pour the beaten eggs into the other side. Scramble the eggs until cooked.\n4. Add the mixed vegetables to the pan and stir-fry for a few minutes until they are tender.\n5. Add the cooked jasmine rice to the pan and stir well to combine all ingredients.\n6. Season the fried rice with soy sauce, fish sauce, and sugar. Adjust the seasoning to taste.\n7. Stir in the sliced green onions and garnish with fresh cilantro before serving."
+    },
+    {
+      "id": "15",
+      "title": "Cambodian Banana Fritters ",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCsx1n6HiA0lSBqiSRRAMJ6YDBzkoRkPIZhhFGK-bTuJUAC5Ycl_GPCLNqpOrah0Tyk30&usqp=CAU",
+      "description": "A popular Cambodian snack made with ripe bananas coated in a sweet batter and deep-fried until golden brown.",
+      "price": 4.99,
+      "category": "Snack",
+      "recipe": "Ingredients:\n- 3 ripe bananas, sliced into 1-inch pieces\n- 1 cup all-purpose flour\n- 1/4 cup rice flour\n- 1/4 cup sugar\n- 1/2 teaspoon baking powder\n- 1/4 teaspoon salt\n- 1 cup coconut milk\n- Oil for frying\n- Powdered sugar for dusting (optional)\n\nInstructions:\n1. In a bowl, combine the all-purpose flour, rice flour, sugar, baking powder, and salt.\n2. Gradually add the coconut milk to the dry ingredients, stirring until a smooth batter forms.\n3. Heat oil in a deep pan or fryer over medium-high heat.\n4. Dip each banana slice into the batter, ensuring it is fully coated.\n5. Carefully place the coated banana slices into the hot oil and fry until golden brown, about 2-3 minutes per side.\n6. Remove the fritters from the oil and drain on paper towels.\n7. Dust with powdered sugar if desired and serve warm."
+    },
+    {
+      "id": "16",
+      "title": "Samlor Machu Kroeung",
+      "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzsrRRN3H_Vo8Z4rsMCjCTU2GkZXcO_5NJhBKj_pmWt54RUVYymr9FihkhqchQSvShWIDAKS4cxr92aojBvVenDNg7Q9DIoM95kgTGCOs349eGvvXCJ6MvzNLG6pE2D3I98N1g9jLpX2oy/s1600/DSC_0048.JPG",
+      "description": "A flavorful Cambodian soup made with coconut milk, lemongrass, and vegetables.",
+      "price": 8.99,
+      "category": "Soup",
+      "recipe": "Ingredients:\n- 400ml coconut milk\n- 2 cups chicken or vegetable broth\n- 1 stalk lemongrass, bruised and cut into pieces\n- 2 kaffir lime leaves\n- 200g mushrooms, sliced\n- 1 cup baby spinach\n- 2 tablespoons fish sauce\n- 1 tablespoon lime juice\n- Fresh cilantro for garnish\n\nInstructions:\n1. In a pot, combine the coconut milk and chicken or vegetable broth. Add the bruised lemongrass and kaffir lime leaves.\n2. Bring to a simmer over medium heat and let it cook for about 10 minutes to infuse the flavors.\n3. Add the sliced mushrooms and cook for another 5 minutes until tender.\n4. Stir in the baby spinach, fish sauce, and lime juice. Cook for an additional 2 minutes.\n5. Remove from heat and discard the lemongrass and lime leaves.\n6. Serve hot, garnished with fresh cilantro."
+    },
+    {
+      "id": "17",
+      "title": "Bai Sach Chrouk",
+      "image": "https://i.ytimg.com/vi/OUP55SzZPgk/maxresdefault.jpg",
+      "description": "Tender and flavorful grilled beef skewers, marinated in a savory sauce.",
+      "price": 9.99,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 500g beef sirloin, thinly sliced\n- 2 tablespoons soy sauce\n- 1 tablespoon fish sauce\n- 1 tablespoon sugar\n- 2 cloves garlic, minced\n- 1/2 teaspoon black pepper\n- Bamboo skewers, soaked in water\n\nInstructions:\n1. In a bowl, combine the soy sauce, fish sauce, sugar, garlic, and black pepper to make the marinade.\n2. Add the sliced beef to the marinade, ensuring it is well coated. Let it marinate for at least 30 minutes.\n3. Preheat a grill or grill pan over medium-high heat.\n4. Thread the marinated beef onto the soaked bamboo skewers.\n5. Grill the skewers for about 2-3 minutes on each side, or until cooked to your liking.\n6. Serve hot with rice and fresh vegetables."
+    },
+    {
+      "id": "18",
+      "title": "Cambodian Sweet Sticky Rice with Coconut (Bai Domneab)",
+      "image": "https://i.ytimg.com/vi/QcFa8-tSBEA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDWFh8WkmtDWHnYrAURFKComtegfA",
+      "description": "A delicious Cambodian dessert made with sweet sticky rice and coconut milk.",
+      "price": 5.99,
+      "category": "Dessert",
+      "recipe": "Ingredients:\n- 1 cup glutinous (sticky) rice\n- 1 can (400ml) coconut milk\n- 1/2 cup sugar\n- 1/4 teaspoon salt\n- Fresh mango slices (optional)\n\nInstructions:\n1. Rinse the sticky rice under cold water until the water runs clear. Soak the rice in water for at least 4 hours or overnight.\n2. Drain the soaked rice and steam it in a steamer basket over boiling water for about 20-25 minutes until tender.\n3. In a saucepan, heat the coconut milk, sugar, and salt over medium heat until the sugar is dissolved. Do not boil.\n4. Once the rice is cooked, transfer it to a bowl and pour about two-thirds of the coconut milk mixture over it. Stir well to combine and let it sit for about 15 minutes to absorb the coconut milk.\n5. To serve, place a portion of sticky rice on a plate, drizzle with the remaining coconut milk mixture, and serve with fresh mango slices if desired."
+    },
+    {
+      "id": "19",
+      "title": "Cambodian Grilled Chicken (Sach Moan)",
+      "image": "https://summeryule.com/wp-content/uploads/2022/02/ninja-foodi-whole-chicken-500x500.jpeg",
+      "description": "Juicy and flavorful Cambodian grilled chicken marinated in a blend of spices and herbs.",
+      "price": 8.49,
+      "category": "Main Course",
+      "recipe": "Ingredients:\n- 500g chicken thighs or drumsticks\n- 2 tablespoons soy sauce\n- 1 tablespoon fish sauce\n- 1 tablespoon honey\n- 2 cloves garlic, minced\n- 1 teaspoon ground black pepper\n- 1 teaspoon ground coriander\n- Juice of 1 lime\n\nInstructions:\n1. In a bowl, combine soy sauce, fish sauce, honey, minced garlic, ground black pepper, ground coriander, and lime juice to make the marinade.\n2. Add the chicken pieces to the marinade, ensuring they are well coated. Let it marinate for at least 1 hour.\n3. Preheat a grill or grill pan over medium-high heat.\n4. Grill the chicken for about 6-8 minutes per side or until fully cooked and nicely charred.\n5. Remove from the grill and let rest for a few minutes before serving.\n6. Serve hot with steamed rice and fresh vegetables."
+    },
+    {
+      "id": "20",
+      "title": "Cambodian Coconut Pancakes (Num Plae Ai)",
+      "image": "https://i0.wp.com/flavourfullygood.com/wp-content/uploads/2022/07/Num-Plae-Ai-3-Flavourfully-Good-e1663339351470.jpg?fit=2400%2C1600&ssl=1",
+      "description": "Delicious Cambodian coconut pancakes made with rice flour and coconut milk.",
+      "price": 4.99,
+      "category": "Dessert",
+      "recipe": "Ingredients:\n- 1 cup rice flour\n- 1/2 cup coconut milk\n- 1/4 cup sugar\n- 1/4 teaspoon salt\n- 1/2 teaspoon baking powder\n- Oil for cooking\n- Grated coconut and palm sugar syrup for serving\n\nInstructions:\n1. In a bowl, combine the rice flour, sugar, salt, and baking powder.\n2. Gradually add the coconut milk to the dry ingredients, stirring until a smooth batter forms.\n3. Heat a non-stick pan over medium heat and lightly grease it with oil.\n4. Pour small amounts of the batter onto the pan to form pancakes. Cook until bubbles form on the surface, then flip and cook the other side until golden brown.\n5. Remove the pancakes from the pan and let them cool slightly.\n6. Serve the coconut pancakes topped with grated coconut and drizzled with palm sugar syrup."
+    },
+    {
+      "id": "07b4",
+      "title": "vv",
+      "category": "Main Course",
+      "description": "sfdg",
+      "image": "https://allthenoodles.com/wp-content/uploads/2024/09/spicy-garlic-beef-noodles-9.jpg",
+      "price": "",
+      "recipe": "Ingredients:\n- sdf\n- sf\n- sf\n\nInstructions:\n1. sfg\n2. sfhg\n3. steh\n"
+    }
+  ],
+  "feedback": [
+    {
+      "id": "1761365099658",
+      "name": "touch chanraksmey",
+      "email": "touchchanraksmey169@gmail.com",
+      "subject": "by cha",
+      "message": "good",
+      "timestamp": "2025-10-25T04:04:59.658Z",
+      "status": "read"
+    },
+    {
+      "id": "1761402348825",
+      "name": "touch chanraksmey",
+      "email": "touchchanraksmey169@gmail.com",
+      "subject": "by cha",
+      "message": "jjj",
+      "timestamp": "2025-10-25T14:25:48.825Z",
+      "status": "read"
     }
   ]
 }
