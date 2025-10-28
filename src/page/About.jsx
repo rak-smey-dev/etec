@@ -49,7 +49,9 @@ const About = () => {
             </div>
             <div className="relative">
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-2xl border border-amber-200 dark:border-gray-700">
-                <div className="text-6xl text-center mb-4">👑</div>
+                <div className="text-3xl w-10 h-10 mx-auto text-center mb-4 ">
+                  <img src="/src/assets/crown.png" alt="" />
+                </div>
                 <h3 className="text-2xl font-bold text-amber-900 dark:text-amber-100 text-center mb-2">
                   Royal Heritage
                 </h3>
@@ -78,7 +80,9 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🌿</div>
+              <div className=" w-10 h-10 mx-auto text-center text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/ingredian.png" alt="" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
                 Authentic Ingredients
               </h3>
@@ -88,7 +92,9 @@ const About = () => {
             </div>
 
             <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">👩‍🍳</div>
+              <div className=" w-10 h-10 mx-auto text-center text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/chef.png" alt="" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
                 Traditional Techniques
               </h3>
@@ -98,7 +104,9 @@ const About = () => {
             </div>
 
             <div className="group text-center p-8 rounded-2xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-700 dark:to-gray-600 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-              <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📚</div>
+              <div className="  w-10 h-10 mx-auto text-center text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                <img src="/src/assets/book.png" alt="" />
+              </div>
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
                 Cultural Stories
               </h3>
@@ -131,22 +139,30 @@ const About = () => {
             </div>
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
-                <div className="text-4xl mb-3">🍚</div>
+                <div className=" w-10 h-10 mx-auto text-center text-5xl mb-6 ">
+                  <img src="/src/assets/rice.png" alt="" />
+                </div>
                 <div className="font-bold text-lg mb-1">Rice-Based</div>
                 <div className="text-amber-200 text-sm">Core of every meal</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
-                <div className="text-4xl mb-3">🌶️</div>
+                <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
+                  <img src="/src/assets/chli.png" alt="" />
+                </div>
                 <div className="font-bold text-lg mb-1">Balanced Spices</div>
                 <div className="text-amber-200 text-sm">Harmonious flavors</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
-                <div className="text-4xl mb-3">🐟</div>
+                <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
+                  <img src="/src/assets/fish.png" alt="" />
+                </div>
                 <div className="font-bold text-lg mb-1">Freshwater Fish</div>
                 <div className="text-amber-200 text-sm">Mekong specialties</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
-                <div className="text-4xl mb-3">🥬</div>
+                <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
+                  <img src="/src/assets/vegetable.png" alt="" />
+                </div>
                 <div className="font-bold text-lg mb-1">Fresh Herbs</div>
                 <div className="text-amber-200 text-sm">Aromatic greens</div>
               </div>
@@ -169,29 +185,37 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <span className="text-3xl">👵</span>
+              <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span className="text-3xl">
+                  <img src="/src/assets/mama.png" alt="" />
+                </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Grandmothers</h3>
               <p className="text-gray-600 dark:text-gray-400">Keepers of family recipes</p>
             </div>
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <span className="text-3xl">👨‍🍳</span>
+              <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span className="text-3xl">
+                  <img src="/src/assets/chef2.png" alt="" />
+                </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Chefs</h3>
               <p className="text-gray-600 dark:text-gray-400">Modern interpretations</p>
             </div>
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <span className="text-3xl">🏠</span>
+              <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span className="text-3xl">
+                  <img src="/src/assets/home.png" alt="" />
+                </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Home Cooks</h3>
               <p className="text-gray-600 dark:text-gray-400">Everyday family meals</p>
             </div>
             <div className="text-center group">
-              <div className="w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                <span className="text-3xl">🌍</span>
+              <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <span className="text-3xl">
+                  <img src="/src/assets/Goble.png" alt="" />
+                </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Food Lovers</h3>
               <p className="text-gray-600 dark:text-gray-400">Global appreciation</p>
