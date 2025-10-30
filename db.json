@@ -41,7 +41,7 @@
       "title": "Prahok Ktis",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VZ4zycpXYmT3_DURKfaaKdysoYWaMaK8Lw&s",
       "price": 7.99,
-      "category": "Appetizer",
+      "category": "Main Course",
       "recipe": "Ingredients:\n- 200g prahok (fermented fish paste)\n- 1 cup coconut milk\n- 1 tablespoon fish sauce\n- 1 teaspoon sugar\n- 2 cloves garlic, minced\n- 1 red chili, sliced (optional)\n- Fresh herbs (mint, basil, cilantro)\n- Fresh vegetables for serving (cucumber, cabbage, carrots)\n\nInstructions:\n1. In a bowl, mix the prahok with coconut milk, fish sauce, sugar, and minced garlic until well combined.\n2. If you like it spicy, add the sliced red chili to the mixture.\n3. Serve the prahok ktis in a small bowl, garnished with fresh herbs.\n4. Enjoy it as a dip with fresh vegetables like cucumber, cabbage, and carrots."
     },
     {
@@ -187,6 +187,15 @@
       "image": "https://allthenoodles.com/wp-content/uploads/2024/09/spicy-garlic-beef-noodles-9.jpg",
       "price": "",
       "recipe": "Ingredients:\n- sdf\n- sf\n- sf\n\nInstructions:\n1. sfg\n2. sfhg\n3. steh\n"
+    },
+    {
+      "id": "3b0e",
+      "title": "jean pong tea",
+      "category": "Dessert",
+      "description": "qwertyuiop[pouysdfhjkkjhgccv",
+      "image": "https://allthenoodles.com/wp-content/uploads/2024/09/spicy-garlic-beef-noodles-9.jpg",
+      "price": "",
+      "recipe": "Ingredients:\n- oil\n- egg 2\n\nInstructions:\n1. dak ktas oy kdav\n2. គោះពងទា\n"
     }
   ],
   "feedback": [
@@ -200,12 +209,21 @@
       "status": "read"
     },
     {
-      "id": 1761563349756,
+      "id": "1761563349756",
       "name": "touch chanraksmey",
       "email": "touchchanraksmey169@gmail.com",
       "subject": "by cha",
       "message": "hgf",
       "timestamp": "2025-10-27T11:09:09.756Z",
+      "status": "unread"
+    },
+    {
+      "id": 1761650666092,
+      "name": "touch chanraksmey",
+      "email": "touchchanraksmey169@gmail.com",
+      "subject": "by cha",
+      "message": "not good",
+      "timestamp": "2025-10-28T11:24:26.092Z",
       "status": "unread"
     }
   ]

@@ -489,9 +489,9 @@ const RecipeDashboard = () => {
                 {[
                   { value: 'default', label: 'Recommended' },
                   { value: 'name', label: 'Name (A-Z)' },
-                  { value: 'rating', label: 'Highest Rating' },
-                  { value: 'time', label: 'Cooking Time' },
-                  { value: 'calories', label: 'Calories' }
+                  // { value: 'rating', label: 'Highest Rating' },
+                  // { value: 'time', label: 'Cooking Time' },
+                  // { value: 'calories', label: 'Calories' }
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -773,4 +773,4 @@ const RecipeDashboard = () => {
   );
 };
 
-export default RecipeDashboard;
+export default RecipeDashboard; 
