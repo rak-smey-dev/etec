@@ -180,22 +180,31 @@
       "recipe": "Ingredients:\n- 1 cup rice flour\n- 1/2 cup coconut milk\n- 1/4 cup sugar\n- 1/4 teaspoon salt\n- 1/2 teaspoon baking powder\n- Oil for cooking\n- Grated coconut and palm sugar syrup for serving\n\nInstructions:\n1. In a bowl, combine the rice flour, sugar, salt, and baking powder.\n2. Gradually add the coconut milk to the dry ingredients, stirring until a smooth batter forms.\n3. Heat a non-stick pan over medium heat and lightly grease it with oil.\n4. Pour small amounts of the batter onto the pan to form pancakes. Cook until bubbles form on the surface, then flip and cook the other side until golden brown.\n5. Remove the pancakes from the pan and let them cool slightly.\n6. Serve the coconut pancakes topped with grated coconut and drizzled with palm sugar syrup."
     },
     {
-      "id": "07b4",
-      "title": "vv",
-      "category": "Main Course",
-      "description": "sfdg",
-      "image": "https://allthenoodles.com/wp-content/uploads/2024/09/spicy-garlic-beef-noodles-9.jpg",
+      "id": "17c7",
+      "title": " Babor Trey (Fish Rice Porridge)",
+      "category": "Breakfast",
+      "description": "good for health.",
+      "image": "https://preview.redd.it/cambodian-congee-with-fish-v0-rvsu2kq01v1c1.jpeg?auto=webp&s=275b125c5758f0c614a982d72f1a319ed9fe77c0",
       "price": "",
-      "recipe": "Ingredients:\n- sdf\n- sf\n- sf\n\nInstructions:\n1. sfg\n2. sfhg\n3. steh\n"
+      "recipe": "Ingredients:\n- 1 cup of rice\n- 1 piece of fresh fish\n- Garlic, shallots, fish sauce, black pepper\n- Herbs and fried shallots for garnish\n\nInstructions:\n1. Cook the rice with water until it becomes soft.\n2. Add the fish and seasonings (garlic, shallots, fish sauce, pepper).\n3. Continue cooking until it becomes porridge.\n4. Garnish with fried shallots and fresh herbs before serving. \n"
     },
     {
-      "id": "3b0e",
-      "title": "jean pong tea",
-      "category": "Dessert",
-      "description": "qwertyuiop[pouysdfhjkkjhgccv",
-      "image": "https://allthenoodles.com/wp-content/uploads/2024/09/spicy-garlic-beef-noodles-9.jpg",
+      "id": "4415",
+      "title": "Plea Sach Ko (Beef Salad)",
+      "category": "Main Course",
+      "description": "A refreshing Cambodian salad with tender beef, lime juice, and fresh herbs — light, tangy, and perfect as a starter or side dish.\n",
+      "image": "https://i.ytimg.com/vi/46yNicpQieU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBfb2Da5uppCoCenUAVZaKgvs7C3w",
       "price": "",
-      "recipe": "Ingredients:\n- oil\n- egg 2\n\nInstructions:\n1. dak ktas oy kdav\n2. គោះពងទា\n"
+      "recipe": "Ingredients:\n- Beef slices\n- Lime juice\n- Onion\n- Mint , Fish sauce , Sugar.\n\nInstructions:\n1. Mix sliced beef with lime juice and seasoning.\n2. Add onion and mint.\n3. Serve fresh.\n"
+    },
+    {
+      "id": "0287",
+      "title": "Chha Kdam (Stir-Fried Crab with Kampot Pepper)",
+      "category": "Main Course",
+      "description": "A flavorful Cambodian stir-fried crab dish with aromatic garlic and Kampot pepper — spicy, fragrant, and savory.",
+      "image": "https://i.ytimg.com/vi/46yNicpQieU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBfb2Da5uppCoCenUAVZaKgvs7C3w",
+      "price": "",
+      "recipe": "Ingredients:\n- Garlic, Green peppercorns, Soy sauce\n- Crab\n\nInstructions:\n1. Mix sliced beef with lime juice and seasoning.\n2. Add crab and sauce & Stir with Kampot pepper.\n3. Cook until fully done and aromatic.\n"
     }
   ],
   "feedback": [
@@ -206,24 +215,60 @@
       "subject": "by cha",
       "message": "good",
       "timestamp": "2025-10-25T04:04:59.658Z",
-      "status": "read"
-    },
-    {
-      "id": "1761563349756",
-      "name": "touch chanraksmey",
-      "email": "touchchanraksmey169@gmail.com",
-      "subject": "by cha",
-      "message": "hgf",
-      "timestamp": "2025-10-27T11:09:09.756Z",
       "status": "unread"
     },
     {
-      "id": 1761650666092,
+      "id": "1761839254847",
       "name": "touch chanraksmey",
       "email": "touchchanraksmey169@gmail.com",
+      "subject": "beef lok lak ",
+      "message": "it good or it have problem with somthing.",
+      "timestamp": "2025-10-30T15:47:34.847Z",
+      "status": "unread"
+    },
+    {
+      "id": "1762023625377",
+      "name": "Custom Theme 1",
+      "email": "touchchanraksmey169@gmail.com",
+      "subject": "beef lok lak ",
+      "message": "good\n",
+      "timestamp": "2025-11-01T19:00:25.377Z",
+      "status": "unread"
+    },
+    {
+      "id": "1762028250513",
+      "name": "Custom Theme 1",
+      "email": "touchchanraksmey169@gmail.com",
       "subject": "by cha",
-      "message": "not good",
-      "timestamp": "2025-10-28T11:24:26.092Z",
+      "message": "it have problem pls ckeck.",
+      "timestamp": "2025-11-01T20:17:30.513Z",
+      "status": "unread"
+    },
+    {
+      "id": "1762047427794",
+      "name": "Sary",
+      "email": "touchchanraksmey169@gmail.com",
+      "subject": "beef lok lak ",
+      "message": "not not good",
+      "timestamp": "2025-11-02T01:37:07.794Z",
+      "status": "unread"
+    },
+    {
+      "id": "1762048185184",
+      "name": "Sary",
+      "email": "iloveu@gmail.com",
+      "subject": "Nom Banh Chok",
+      "message": "the best in the world ",
+      "timestamp": "2025-11-02T01:49:45.184Z",
+      "status": "unread"
+    },
+    {
+      "id": 1762069618735,
+      "name": "Sary",
+      "email": "iloveu@gmail.com",
+      "subject": "Nom Banh Chok",
+      "message": "it not good.",
+      "timestamp": "2025-11-02T07:46:58.735Z",
       "status": "unread"
     }
   ]

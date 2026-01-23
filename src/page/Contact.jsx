@@ -19,7 +19,7 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     setIsSubmitting(true)
 
@@ -32,18 +32,14 @@ const Contact = () => {
         status: 'unread'
       }
 
-      // Send feedback to JSON Server
-      const response = await fetch('http://localhost:5000/feedback', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(feedbackData),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to submit feedback')
-      }
+      // Get existing feedback from localStorage or initialize empty array
+      const existingFeedback = JSON.parse(localStorage.getItem('feedback')) || []
+      
+      // Add new feedback
+      const updatedFeedback = [...existingFeedback, feedbackData]
+      
+      // Save to localStorage
+      localStorage.setItem('feedback', JSON.stringify(updatedFeedback))
 
       // Show success message
       Swal.fire({
@@ -265,4 +261,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Contact; // THIS LINE IS CRITICAL

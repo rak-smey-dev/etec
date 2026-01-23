@@ -9,67 +9,45 @@ const FeedbackPage = () => {
   const [error, setError] = useState(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [filterStatus, setFilterStatus] = useState('all')
-  const [updatingId, setUpdatingId] = useState(null) // Track which item is being updated
+  const [updatingId, setUpdatingId] = useState(null)
 
-  // Fetch feedback from JSON Server
+  // Load feedback from localStorage on component mount
   useEffect(() => {
-    const fetchFeedback = async () => {
+    const loadFeedback = () => {
       try {
         setLoading(true)
-        const response = await fetch('http://localhost:5000/feedback')
+        const savedFeedback = JSON.parse(localStorage.getItem('feedback')) || []
         
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-        
-        const data = await response.json()
-        console.log('Fetched feedback:', data) // Debug log
+        console.log('Loaded feedback from localStorage:', savedFeedback)
         
         // Sort by timestamp (newest first)
-        const sortedData = data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+        const sortedData = savedFeedback.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
         setFeedback(sortedData)
       } catch (err) {
-        console.error('Error fetching feedback:', err)
-        setError(`Failed to load feedback: ${err.message}. Make sure JSON Server is running on port 5000.`)
+        console.error('Error loading feedback:', err)
+        setError('Failed to load feedback from local storage.')
       } finally {
         setLoading(false)
       }
     }
 
-    fetchFeedback()
+    loadFeedback()
   }, [])
 
-  // Mark feedback as read/unread - FIXED
-  const toggleReadStatus = async (id, currentStatus) => {
+  // Save feedback to localStorage whenever it changes
+  useEffect(() => {
+    if (feedback.length > 0) {
+      localStorage.setItem('feedback', JSON.stringify(feedback))
+    }
+  }, [feedback])
+
+  // Mark feedback as read/unread
+  const toggleReadStatus = (id, currentStatus) => {
     try {
       setUpdatingId(id)
       
       const newStatus = currentStatus === 'read' ? 'unread' : 'read'
       console.log(`Updating feedback ${id} from ${currentStatus} to ${newStatus}`)
-
-      const response = await fetch(`http://localhost:5000/feedback/${id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ 
-          status: newStatus,
-          // Include all required fields to avoid validation issues
-          name: feedback.find(f => f.id === id)?.name,
-          email: feedback.find(f => f.id === id)?.email,
-          subject: feedback.find(f => f.id === id)?.subject,
-          message: feedback.find(f => f.id === id)?.message,
-          timestamp: feedback.find(f => f.id === id)?.timestamp
-        }),
-      })
-
-      if (!response.ok) {
-        const errorText = await response.text()
-        throw new Error(`Server responded with ${response.status}: ${errorText}`)
-      }
-
-      const updatedItem = await response.json()
-      console.log('Update response:', updatedItem)
 
       // Update local state
       setFeedback(prev => prev.map(item => 
@@ -97,9 +75,9 @@ const FeedbackPage = () => {
     }
   }
 
-  // Delete feedback - FIXED
-  const deleteFeedback = async (id, name) => {
-    const result = await Swal.fire({
+  // Delete feedback
+  const deleteFeedback = (id, name) => {
+    const result = Swal.fire({
       title: 'Are you sure?',
       text: `Delete feedback from ${name}?`,
       icon: 'warning',
@@ -110,78 +88,30 @@ const FeedbackPage = () => {
       cancelButtonText: 'Cancel'
     })
 
-    if (result.isConfirmed) {
-      try {
-        console.log(`Deleting feedback ${id}`)
-        
-        const response = await fetch(`http://localhost:5000/feedback/${id}`, {
-          method: 'DELETE',
-        })
+    result.then((confirmed) => {
+      if (confirmed.isConfirmed) {
+        try {
+          console.log(`Deleting feedback ${id}`)
+          
+          // Remove from local state
+          setFeedback(prev => prev.filter(item => item.id !== id))
 
-        if (!response.ok) {
-          const errorText = await response.text()
-          throw new Error(`Server responded with ${response.status}: ${errorText}`)
+          Swal.fire({
+            title: "Deleted!",
+            text: "Feedback has been deleted.",
+            icon: "success",
+            confirmButtonColor: "#d97706",
+            timer: 1500
+          })
+        } catch (err) {
+          console.error('Error deleting feedback:', err)
+          Swal.fire({
+            title: "Error!",
+            text: `Failed to delete feedback: ${err.message}`,
+            icon: "error",
+            confirmButtonColor: "#d97706"
+          })
         }
-
-        // Remove from local state
-        setFeedback(prev => prev.filter(item => item.id !== id))
-
-        Swal.fire({
-          title: "Deleted!",
-          text: "Feedback has been deleted.",
-          icon: "success",
-          confirmButtonColor: "#d97706",
-          timer: 1500
-        })
-      } catch (err) {
-        console.error('Error deleting feedback:', err)
-        Swal.fire({
-          title: "Error!",
-          text: `Failed to delete feedback: ${err.message}`,
-          icon: "error",
-          confirmButtonColor: "#d97706"
-        })
-      }
-    }
-  }
-
-  // Alternative: Update without API call (client-side only)
-  const toggleReadStatusLocal = (id, currentStatus) => {
-    const newStatus = currentStatus === 'read' ? 'unread' : 'read'
-    setFeedback(prev => prev.map(item => 
-      item.id === id ? { ...item, status: newStatus } : item
-    ))
-    
-    Swal.fire({
-      title: "Updated!",
-      text: `Feedback marked as ${newStatus}.`,
-      icon: "success",
-      confirmButtonColor: "#d97706",
-      timer: 1500
-    })
-  }
-
-  // Alternative: Delete without API call (client-side only)
-  const deleteFeedbackLocal = (id, name) => {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: `Delete feedback from ${name}?`,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Yes, delete it!',
-      cancelButtonText: 'Cancel'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        setFeedback(prev => prev.filter(item => item.id !== id))
-        Swal.fire({
-          title: "Deleted!",
-          text: "Feedback has been deleted.",
-          icon: "success",
-          confirmButtonColor: "#d97706",
-          timer: 1500
-        })
       }
     })
   }
@@ -230,6 +160,9 @@ const FeedbackPage = () => {
     )
   }
 
+  // Update the error message to remove JSON Server reference
+  const displayError = error ? error.replace('JSON Server', 'local storage') : null
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,15 +193,14 @@ const FeedbackPage = () => {
           </div>
         </div>
 
-        {/* Debug Info */}
-        {/* {process.env.NODE_ENV === 'development' && (
+        {/* Debug Info - Remove server reference */}
+        {process.env.NODE_ENV === 'development' && (
           <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-6">
             <p className="text-yellow-800 dark:text-yellow-200 text-sm">
-              <strong>Debug:</strong> Loaded {feedback.length} feedback items. 
-              Server: http://localhost:5000/feedback
+              <strong>Note:</strong> Feedback is stored locally in your browser.
             </p>
           </div>
-        )} */}
+        )}
 
         {/* Filters and Search */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-6 mb-6 border border-gray-200 dark:border-gray-700">
@@ -296,9 +228,9 @@ const FeedbackPage = () => {
         </div>
 
         {/* Error Message */}
-        {error && (
+        {displayError && (
           <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-6">
-            <p className="text-red-800 dark:text-red-200">{error}</p>
+            <p className="text-red-800 dark:text-red-200">{displayError}</p>
             <button 
               onClick={() => window.location.reload()}
               className="mt-2 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300 text-sm"
@@ -307,118 +239,10 @@ const FeedbackPage = () => {
             </button>
           </div>
         )}
-
-        {/* Feedback List */}
-        <div className="space-y-4">
-          {filteredFeedback.length === 0 ? (
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-12 text-center border border-gray-200 dark:border-gray-700">
-              <FaEnvelope className="text-gray-400 text-4xl mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">No feedback found</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                {searchTerm || filterStatus !== 'all' 
-                  ? 'Try adjusting your search or filter criteria.' 
-                  : 'No feedback has been submitted yet.'}
-              </p>
-              {feedback.length === 0 && (
-                <div className="mt-4">
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
-                    Make sure your JSON Server is running with feedback data.
-                  </p>
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center text-amber-600 hover:text-amber-700 dark:text-amber-400"
-                  >
-                    Go to Contact page to submit feedback
-                  </Link>
-                </div>
-              )}
-            </div>
-          ) : (
-            filteredFeedback.map((item) => (
-              <div
-                key={item.id}
-                className={`bg-white dark:bg-gray-800 rounded-lg shadow-sm border transition-all duration-300 ${
-                  item.status === 'unread' 
-                    ? 'border-amber-300 dark:border-amber-600 bg-amber-50 dark:bg-amber-900/10' 
-                    : 'border-gray-200 dark:border-gray-700'
-                }`}
-              >
-                <div className="p-6">
-                  {/* Header */}
-                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className={`text-lg font-semibold ${
-                          item.status === 'unread' 
-                            ? 'text-amber-900 dark:text-amber-100' 
-                            : 'text-gray-900 dark:text-white'
-                        }`}>
-                          {item.subject || 'No Subject'}
-                        </h3>
-                        {item.status === 'unread' && (
-                          <span className="px-2 py-1 bg-amber-500 text-white text-xs rounded-full font-medium">
-                            New
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
-                        <div className="flex items-center gap-1">
-                          <FaUser className="w-3 h-3" />
-                          <span>{item.name || 'Anonymous'}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <FaEnvelope className="w-3 h-3" />
-                          <span>{item.email || 'No email'}</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <FaCalendar className="w-3 h-3" />
-                          <span>{formatDate(item.timestamp)}</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <button
-                        onClick={() => toggleReadStatus(item.id, item.status)}
-                        disabled={updatingId === item.id}
-                        className={`p-2 rounded-lg transition-colors ${
-                          item.status === 'unread'
-                            ? 'bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-400 hover:bg-amber-200 dark:hover:bg-amber-800'
-                            : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-600'
-                        } ${updatingId === item.id ? 'opacity-50 cursor-not-allowed' : ''}`}
-                        title={item.status === 'unread' ? 'Mark as read' : 'Mark as unread'}
-                      >
-                        {updatingId === item.id ? (
-                          <div className="w-4 h-4 border-2 border-amber-600 border-t-transparent rounded-full animate-spin"></div>
-                        ) : item.status === 'unread' ? (
-                          <FaEye />
-                        ) : (
-                          <FaEyeSlash />
-                        )}
-                      </button>
-                      <button
-                        onClick={() => deleteFeedback(item.id, item.name)}
-                        className="p-2 bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-200 dark:hover:bg-red-800 transition-colors"
-                        title="Delete feedback"
-                      >
-                        <FaTrash className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Message */}
-                  <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
-                    <p className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
-                      {item.message || 'No message content'}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))
-          )}
-        </div>
       </div>
     </div>
+    
   )
 }
-
-export default FeedbackPage
+// At the end of the file
+export default FeedbackPage;

@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaSearch, FaClock, FaUser, FaFire, FaHeart, FaRegHeart, FaUtensils, FaExclamationTriangle, FaDollarSign, FaList, FaTh, FaPlus, FaFilter } from 'react-icons/fa';
+import { products } from '../data'; // Changed from './data' to '../data'
 
 const RecipeDashboard = () => {
   const [favorites, setFavorites] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [recipes, setRecipes] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false); // Changed to false
   const [error, setError] = useState(null);
   const [viewMode, setViewMode] = useState('list'); // Default to list view
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -200,44 +201,43 @@ const RecipeDashboard = () => {
     ];
   };
 
-  // Fetch recipes from API
+  // Load recipes from local data
   useEffect(() => {
-    const fetchRecipes = async () => {
+    const loadRecipes = () => {
       try {
         setLoading(true);
         setError(null);
         
-        const response = await fetch('http://localhost:5000/products');
+        // Try to get recipes from localStorage first
+        const savedRecipes = localStorage.getItem('recipes');
         
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        if (savedRecipes) {
+          // Parse and transform recipes from localStorage
+          const parsedRecipes = JSON.parse(savedRecipes);
+          const transformedData = transformRecipeData(parsedRecipes);
+          setRecipes(transformedData);
+        } else {
+          // If no recipes in localStorage, use imported data
+          if (products && Array.isArray(products)) {
+            const transformedData = transformRecipeData(products);
+            setRecipes(transformedData);
+          } else {
+            // Fallback to sample data
+            setRecipes(getFallbackRecipes());
+          }
         }
-        
-        const data = await response.json();
-        
-        if (!data || !Array.isArray(data)) {
-          throw new Error('Invalid data format received from server');
-        }
-        
-        const transformedData = transformRecipeData(data);
-        setRecipes(transformedData);
         
       } catch (err) {
-        console.error('Error fetching recipes:', err);
-        const errorMessage = err.message.includes('fetch') 
-          ? 'Failed to connect to server. Please make sure the server is running on http://localhost:5000'
-          : `Error loading recipes: ${err.message}`;
-        
-        setError(errorMessage);
-        // Fallback to sample data
+        console.error('Error loading recipes:', err);
+        setError('Error loading recipes from local data');
         setRecipes(getFallbackRecipes());
       } finally {
         setLoading(false);
       }
     };
 
-    fetchRecipes();
-  }, []);
+    loadRecipes();
+  }, []); // Empty dependency array - runs once on mount
 
   // Safe image error handler
   const handleImageError = (e, fallbackImage = null) => {
@@ -489,9 +489,9 @@ const RecipeDashboard = () => {
                 {[
                   { value: 'default', label: 'Recommended' },
                   { value: 'name', label: 'Name (A-Z)' },
-                  // { value: 'rating', label: 'Highest Rating' },
-                  // { value: 'time', label: 'Cooking Time' },
-                  // { value: 'calories', label: 'Calories' }
+                  { value: 'rating', label: 'Highest Rating' },
+                  { value: 'time', label: 'Cooking Time' },
+                  { value: 'calories', label: 'Calories' }
                 ].map((option) => (
                   <button
                     key={option.value}
@@ -773,4 +773,4 @@ const RecipeDashboard = () => {
   );
 };
 
-export default RecipeDashboard; 
+export default RecipeDashboard;

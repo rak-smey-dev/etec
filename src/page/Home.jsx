@@ -165,35 +165,9 @@ const Home = () => {
     }
   }, [data, searchTerm, selectedCategory])
 
-  // SIMPLIFIED: Get reliable image URL
-  // const getPlaceholderImage = (title) => {
-  //   const foodImages = {
-  //     'Beef Lok Lak': 'https://www.visit-angkor.org/wp-content/uploads/2024/03/beef-lok-lak-cambodia.jpg',
-  //     'Fish Amok': 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSB-fAmvFc9mosZptiv5pNfzdbgOcyzkHIFiP2EuSmhgoviiWrQzQocySLRZizCfH6z8F-pZhkgPVNfdxMJMjD8XbMfZdi2HtOypk0oGA',
-  //     'Nom Banh Chok': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwnMt-6xkjh_R8Vo3PkjVDmDden9F787X_Hg&s',
-  //     'Khmer Red Curry': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjA9plmXG-wYO8PzDTG5sX5Sjo-bR1ISZdEcKDE-cYWGAQpK_X3L2Fb8p1VcdtpZtyt8&usqp=CAU',
-  //     'Prahok Ktis': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6VZ4zycpXYmT3_DURKfaaKdysoYWaMaK8Lw&s',
-  //     'Sticky Rice with Mango': 'https://rakskitchen.net/wp-content/uploads/2024/06/mango-sticky-rice-thai.jpg',
-  //     'Samlor Korkor': 'https://toursbyjeeps.com/wp-content/uploads/2020/12/Untitled-1.jpg',
-  //     'Khmer Noodles Soup (Kuy Teav)': 'https://www.foodnetwork.com/content/dam/images/food/fullset/2022/01/19/FN_kuy-teav-deana-saukam_s4x3.jpg',
-  //     'Crispy Fried Spring Rolls': 'https://thai-foodie.com/wp-content/uploads/2023/07/thai-egg-rolls-redo.jpg',
-  //     'Cambodian Iced Coffee': 'https://i.pinimg.com/736x/ea/3f/78/ea3f781f81bc8f1f3e411c19ca800c28.jpg',
-  //     'Cambodian Mango Salad': 'https://grantourismotravels.com/wp-content/uploads/2021/10/Burmese-Green-Mango-Salad-Recipe-Copyright-2022-Terence-Carter-Grantourismo-T-480x270.jpg',
-  //     'Cambodian Beef Skewers (Sach Ko Ang)': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgVOZWJ52MfHuu3MneqOHTeuWxXOndPtRjDCv7dGAXvITNPbtBbogU3mglmP9sjN1SCeM&usqp=CAU',
-  //     'Cambodian Pumpkin Custard (Sankhya Lapov)': 'https://www.indochinatour.com/assets/images/Cambodia-/cambodia-sankhya-lapov.jpg',
-  //     'Cambodian Fried Rice (Bai Cha)': 'https://www.jozmahal.com/wp-content/uploads/2023/11/pork-fried-rice-featured.jpg',
-  //     'Cambodian Banana Fritters ': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCsx1n6HiA0lSBqiSRRAMJ6YDBzkoRkPIZhhFGK-bTuJUAC5Ycl_GPCLNqpOrah0Tyk30&usqp=CAU',
-  //     'Samlor Machu Kroeung': 'https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzsrRRN3H_Vo8Z4rsMCjCTU2GkZXcO_5NJhBKj_pmWt54RUVYymr9FihkhqchQSvShWIDAKS4cxr92aojBvVenDNg7Q9DIoM95kgTGCOs349eGvvXCJ6MvzNLG6pE2D3I98N1g9jLpX2oy/s1600/DSC_0048.JPG',
-  //     'Bai Sach Chrouk': 'https://i.ytimg.com/vi/OUP55SzZPgk/maxresdefault.jpg',
-  //     'Cambodian Sweet Sticky Rice with Coconut (Bai Domneab)': 'https://i.ytimg.com/vi/QcFa8-tSBEA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDWFh8WkmtDWHnYrAURFKComtegfA',
-  //     'Cambodian Grilled Chicken (Sach Moan)': 'https://summeryule.com/wp-content/uploads/2022/02/ninja-foodi-whole-chicken-500x500.jpeg',
-  //     'Cambodian Coconut Pancakes (Num Plae Ai)': 'https://i0.wp.com/flavourfullygood.com/wp-content/uploads/2022/07/Num-Plae-Ai-3-Flavourfully-Good-e1663339351470.jpg?fit=2400%2C1600&ssl=1',
-  //   }
+  
     
-  //   const safeTitle = title || 'Food'
-  //   return foodImages[safeTitle] || `https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop&text=${encodeURIComponent(safeTitle)}`
-  // }
-
+  
   // SIMPLIFIED: Always use reliable Unsplash images
   const getFallbackImage = () => {
     return "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400&h=300&fit=crop";
@@ -444,4 +418,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;

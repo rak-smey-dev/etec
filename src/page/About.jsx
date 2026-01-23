@@ -140,28 +140,28 @@ const About = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
                 <div className=" w-10 h-10 mx-auto text-center text-5xl mb-6 ">
-                  <img src="/src/assets/rice.png" alt="" />
+                  <img src="public/image/rice.png" alt="" />
                 </div>
                 <div className="font-bold text-lg mb-1">Rice-Based</div>
                 <div className="text-amber-200 text-sm">Core of every meal</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
                 <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
-                  <img src="/src/assets/chli.png" alt="" />
+                  <img src="public/image/chli.png" alt="" />
                 </div>
                 <div className="font-bold text-lg mb-1">Balanced Spices</div>
                 <div className="text-amber-200 text-sm">Harmonious flavors</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
                 <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
-                  <img src="/src/assets/fish.png" alt="" />
+                  <img src="public/image/fish.png" alt="" />
                 </div>
                 <div className="font-bold text-lg mb-1">Freshwater Fish</div>
                 <div className="text-amber-200 text-sm">Mekong specialties</div>
               </div>
               <div className="bg-amber-800/50 backdrop-blur-sm rounded-xl p-6 text-center border border-amber-600/30">
                 <div className="w-10 h-10 mx-auto text-center text-5xl mb-6">
-                  <img src="/src/assets/vegetable.png" alt="" />
+                  <img src="public/image/vegetable.png" alt="" />
                 </div>
                 <div className="font-bold text-lg mb-1">Fresh Herbs</div>
                 <div className="text-amber-200 text-sm">Aromatic greens</div>
@@ -187,7 +187,7 @@ const About = () => {
             <div className="text-center group">
               <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <span className="text-3xl">
-                  <img src="/src/assets/mama.png" alt="" />
+                  <img src="public/image/mama.png" alt="" />
                 </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Grandmothers</h3>
@@ -196,7 +196,7 @@ const About = () => {
             <div className="text-center group">
               <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <span className="text-3xl">
-                  <img src="/src/assets/chef2.png" alt="" />
+                  <img src="public/image/chef2.png" alt="" />
                 </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Chefs</h3>
@@ -205,7 +205,7 @@ const About = () => {
             <div className="text-center group">
               <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <span className="text-3xl">
-                  <img src="/src/assets/home.png" alt="" />
+                  <img src="public/image/home.png" alt="" />
                 </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Home Cooks</h3>
@@ -214,7 +214,7 @@ const About = () => {
             <div className="text-center group">
               <div className="w-10 h-10  text-center text-5xl bg-gradient-to-br from-amber-400 to-orange-700 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                 <span className="text-3xl">
-                  <img src="/src/assets/Goble.png" alt="" />
+                  <img src="public/image/Goble.png" alt="" />
                 </span>
               </div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">Food Lovers</h3>

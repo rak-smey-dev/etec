@@ -1,12 +1,21 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import Navbar from '../Component/Navbar';
 const FirstPage = () => {
   const navigate = useNavigate()
 
   const handleGetStarted = () => {
-    navigate('/recipes')
-  }
+    // Scroll to top first
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
+    // Then navigate after a short delay
+    setTimeout(() => {
+      navigate('/recipes'); // Navigate to recipes page
+    }, 300); // Delay matches scroll animation
+  };
 
   return (
     <div className="min-h-full  bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 flex flex-col transition-colors duration-300">
@@ -20,7 +29,7 @@ const FirstPage = () => {
       {/* Header */}
       <header className="relative z-10 text-center pt-16 px-4">
         <div className=' flex align-middle justify-center mb-4 size-full'>
-          <img src="/src/assets/FoodProfile.png" alt="Food Profile" />
+          <img src="public/image/FoodProfile.png" alt="Food Profile" />
         </div>
         <h1 className="text-5xl md:text-6xl font-bold text-amber-900 dark:text-amber-100 mb-4">
           រូបមន្តអាហារខ្មែរ
@@ -48,7 +57,7 @@ const FirstPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               <div className="text-center p-6 bg-amber-50 dark:bg-gray-700 rounded-2xl border border-amber-200 dark:border-gray-600 transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image copy 3.png" alt="" />
+                  <img src="public/image/image copy 3.png" alt="" />
                 </div>
                 <h3 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Authentic Recipes</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Traditional Cambodian dishes passed through generations</p>
@@ -56,7 +65,7 @@ const FirstPage = () => {
               
               <div className="text-center p-6 bg-amber-50 dark:bg-gray-700 rounded-2xl border border-amber-200 dark:border-gray-600 transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image copy 2.png" alt="" />
+                  <img src="public/image/image copy 2.png" alt="" />
                 </div>
                 <h3 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Rich Flavors</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Experience the unique blend of spices and herbs</p>
@@ -64,7 +73,7 @@ const FirstPage = () => {
               
               <div className="text-center p-6 bg-amber-50 dark:bg-gray-700 rounded-2xl border border-amber-200 dark:border-gray-600 transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image copy.png" alt="" />
+                  <img src="public/image/image copy.png" alt="" />
                 </div>
                 <h3 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">Easy to Follow</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">Step-by-step instructions for perfect results</p>
@@ -92,25 +101,25 @@ const FirstPage = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
               <div className="text-center p-4 bg-amber-800/50 dark:bg-gray-700/50 rounded-xl transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image.png" alt="" />
+                  <img src="public/image/image.png" alt="" />
                 </div>
                 <div>Nom Banh Chok</div>
               </div>
               <div className="text-center p-4 bg-amber-800/50 dark:bg-gray-700/50 rounded-xl transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/salad.png" alt="" />
+                  <img src="public/image/salad.png" alt="" />
                 </div>
                 <div>Salad</div>
               </div>
               <div className="text-center p-4 bg-amber-800/50 dark:bg-gray-700/50 rounded-xl transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image copy 5.png" alt="" />
+                  <img src="public/image/image copy 5.png" alt="" />
                 </div>
                 <div>Bai Sach Chrouk</div>
               </div>
               <div className="text-center p-4 bg-amber-800/50 dark:bg-gray-700/50 rounded-xl transition-colors duration-300">
                 <div className="text-3xl mb-4 w-9 h-9 mx-auto">
-                  <img src="/src/assets/image copy 4.png" alt="" />
+                  <img src="public/image/image copy 4.png" alt="" />
                 </div>
                 <div>Samlor Machu</div>
               </div>
@@ -164,4 +173,4 @@ const FirstPage = () => {
   )
 }
 
-export default FirstPage
+export default FirstPage;

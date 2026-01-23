@@ -1,5 +1,7 @@
+// src/page/Product.jsx
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { getProductById } from '../data' // Changed from './data' to '../data'
 
 const Product = () => {
   const { id } = useParams()
@@ -8,20 +10,21 @@ const Product = () => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    const fetchProduct = async () => {
+    const loadProduct = () => {
       try {
         setLoading(true)
-        const response = await fetch(`http://localhost:5000/products/${id}`)
         
-        if (!response.ok) {
+        // Use local data instead of fetch
+        const foundProduct = getProductById(id)
+        
+        if (!foundProduct) {
           throw new Error('Product not found')
         }
         
-        const data = await response.json()
-        setProduct(data)
+        setProduct(foundProduct)
         setError(null)
       } catch (err) {
-        console.error('Error fetching product:', err)
+        console.error('Error loading product:', err)
         setError('Product not found')
         setProduct(null)
       } finally {
@@ -29,7 +32,7 @@ const Product = () => {
       }
     }
 
-    fetchProduct()
+    loadProduct()
   }, [id])
 
   if (loading) {
@@ -228,4 +231,5 @@ const Product = () => {
   )
 }
 
-export default Product
+// At the end of the file
+export default Product;
